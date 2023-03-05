@@ -50,7 +50,7 @@ const App = () => {
 
   const setImageHandler = (e) => {
     setData({ ...data, image: e.target.files[0] });
-    uploadPhoto();
+    uploadPhoto(e.target.files[0]);
   };
   return (
     <form onSubmit={sendData}>
@@ -72,7 +72,7 @@ const App = () => {
       />
       <br></br>
       <br></br>
-      <input type="file" id="avatar" name="avatar" onChange={setImageHandler} />
+      <input type="file" onChange={setImageHandler} />
       <br></br>
       <br></br>
       <input type="submit" value="submit" />
